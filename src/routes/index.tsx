@@ -23,6 +23,7 @@ function Index() {
   const isMobile = useSyncExternalStore(subscribeMobile, () => matchMedia("(max-width: 767px)").matches, () => false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSoundsMenuOpen, setSoundsMenuOpen] = useState(false);
+  const [heroSlide, setHeroSlide] = useState(0);
   const menuToggleRef = useRef<HTMLAnchorElement>(null);
   useImportedLayout();
   useEffect(() => {
@@ -47,13 +48,13 @@ function Index() {
         onOpenSounds={() => setSoundsMenuOpen(true)}
         onCloseSounds={() => setSoundsMenuOpen(false)}
       />
-      <div id="outer-wrap" className={"\x77rap-boxshadow site clr mm-page"}>
+      <div id="outer-wrap" className={`wrap-boxshadow site clr mm-page${isMenuOpen ? " dreamlinks-page-menu-open" : ""}`}>
         <div id="wrap" className={"clr"}>
           <div className={"siteheader-holder"} style={{ height: "120px", display: "none" }} />
           <ImportedHeader menuToggleRef={menuToggleRef} isMenuOpen={isMenuOpen} onToggleMenu={() => setMenuOpen((open) => !open)} />
           <main id="main" className={"site-main clr"}>
             <div data-elementor-id="1639" className={"elementor elementor-1639"}>
-              <ImportedSectionGolfSleepSoundsApp isMobile={isMobile} />
+              <ImportedSectionGolfSleepSoundsApp isMobile={isMobile} heroSlide={heroSlide} onHeroSlideChange={setHeroSlide} />
               <section className={"elementor-section elementor-top-section elementor-element elementor-element-6f9c623 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right"}>
                 <div className={"elementor-container elementor-column-gap-default"}>
                   <div className={"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9f30cff"} data-element_type="column">
@@ -441,7 +442,7 @@ function ImportedHeader({ menuToggleRef, isMenuOpen, onToggleMenu }: { menuToggl
   );
 }
 
-function ImportedSectionGolfSleepSoundsApp({ isMobile }: { isMobile: boolean }) {
+function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideChange }: { isMobile: boolean; heroSlide: number; onHeroSlideChange: (slide: number) => void }) {
   return (
     <section className={"elementor-section elementor-top-section elementor-element elementor-element-ed96999 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right"}>
       <div className={"elementor-container elementor-column-gap-default"}>
