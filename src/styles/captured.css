@@ -1,4 +1,4 @@
-@layer base { img, video { max-width: none; } html, body, html *, html::before, html::after, html *::before, html *::after, html *::marker, html *::placeholder, html *::file-selector-button { all: revert-layer; } }
+@layer base { img, video { max-width: none; } }
 
 /* site-import: preserve source CSS */
 img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px; }
@@ -7453,6 +7453,7 @@ body.rtl .e-con { --padding-inline-start: var(--padding-right); --padding-inline
 @media (max-width: 767px) {
   .elementor .elementor-hidden-mobile, .elementor .elementor-hidden-phone { display: none; }
 }
+@media (max-width: 1024px) { .elementor .elementor-hidden-desktop { display: block !important; } }
 @media (min-width:-1) and (max-width:-1) {
   .elementor .elementor-hidden-mobile_extra { display: none; }
 }
@@ -8885,3 +8886,44 @@ div#mc4wp_form_widget-1 { display: none; }
   }
 }
 
+
+
+/* Imported homepage corrections: preserve native reset behavior while restoring semantic content and menus. */
+.site .elementor-section.elementor-section-boxed > .elementor-container { max-width: min(1140px, 90%); }
+.elementor-1639 .elementor-element.elementor-element-ed96999 > .elementor-container { max-width: 1280px !important; padding-inline: 24px; }
+.elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider { justify-content: center; }
+.elementor-1639 .elementor-element.elementor-element-ed96999 .slider_frame { pointer-events: none; }
+.elementor-1639 .elementor-element.elementor-element-ed96999 .slider_frame img { display: block; }
+.elementor-1639 .elementor-element.elementor-element-ed96999 #mobile_slider .owl-stage { display: flex; }
+.elementor-1639 .elementor-element.elementor-element-ed96999 #mobile_slider .owl-item { flex: 0 0 300px; }
+.elementor-1639 .elementor-element.elementor-element-ed96999 #mobile_slider .owl-item img { width: 100%; max-width: 100%; }
+#site-header-inner { max-width: min(1280px, 90%); }
+.acm-mobile-menu-icon { display: none; }
+.dreamlinks-page-menu-open { transition: transform 0.4s ease; }
+@media (max-width: 767px) {
+  .elementor-1639 .elementor-element.elementor-element-ed96999 { padding-top: 0; }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 > .elementor-container { max-width: 100% !important; padding-inline: 18px; }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .elementor-column.elementor-col-50 { width: 100%; }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .elementor-element-f8afb86 > .elementor-element-populated { margin-top: 20px; }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider::before { width: min(90vw, 360px); height: min(90vw, 360px); }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider .slider_frame { width: min(78vw, 315px); }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 #mobile_slider { width: min(74vw, 300px); }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 #mobile_slider .owl-item { flex-basis: min(74vw, 300px); }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider .left_icon,
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider .right_icon { max-width: 72px; }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider .left_icon { left: 0; bottom: 56px; }
+  .elementor-1639 .elementor-element.elementor-element-ed96999 .banner_slider .right_icon { right: 0; top: 56px; }
+  #site-header-inner { max-width: none; }
+  #site-logo #site-logo-inner a { min-width: 0; width: 150px; }
+  #site-logo #site-logo-inner a img { max-width: 150px; }
+  #site-navigation-wrap { display: none !important; }
+  body.default-breakpoint .acmthemes-mobile-menu-icon { display: block; }
+  #acm-mobile-menu.dreamlinks-menu-open { width: min(80vw, 440px); }
+}
+@media (min-width: 768px) {
+  #site-navigation-wrap .dropdown-menu li.dropdown:hover > .sub-menu,
+  #site-navigation-wrap .dropdown-menu li.dropdown:focus-within > .sub-menu { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #acm-mobile-menu, .dreamlinks-page-menu-open, #mm-blocker { transition: none !important; }
+}
