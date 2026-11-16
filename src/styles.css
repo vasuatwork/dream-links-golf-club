@@ -153,3 +153,58 @@
     color: var(--color-foreground);
   }
 }
+
+/* site-import tokens: begin (generated; re-import replaces this block) */
+/* Imported clone roles use prefixed Tailwind utilities
+   (bg-site-import-primary, text-site-import-foreground, …); edit the
+   --site-import-* variables to restyle the clone. Unprefixed roles theme new UI. */
+:root {
+  --background: oklch(0.97155 0.01341 295.32);
+  --site-import-background: oklch(0.97155 0.01341 295.32);
+  --foreground: oklch(0.38508 0.06587 281.72);
+  --site-import-foreground: oklch(0.38508 0.06587 281.72);
+  --primary: oklch(0.66318 0.10012 184.01);
+  --site-import-primary: oklch(0.66318 0.10012 184.01);
+  --primary-foreground: oklch(0.985 0 0);
+  --site-import-primary-foreground: oklch(0.985 0 0);
+  --accent: oklch(0.84883 0.05629 176.2);
+  --site-import-accent: oklch(0.84883 0.05629 176.2);
+  --border: oklch(0 0 0);
+  --site-import-border: oklch(0 0 0);
+  --card: oklch(1 0 0 / 0.3);
+  --site-import-card: oklch(1 0 0 / 0.3);
+  --muted: oklch(0.96124 0.00414 271.37);
+  --site-import-muted: oklch(0.96124 0.00414 271.37);
+  --site-import-menu-surface: oklch(1 0 0);
+  --site-import-menu-foreground: oklch(0.42 0.035 263);
+  --site-import-menu-shadow: oklch(0.2 0.02 270 / 0.12);
+  --site-import-menu-scrim: oklch(0.2 0.02 270 / 0.16);
+}
+/* Design tokens captured from the imported site, registered as Tailwind
+   utilities (bg-<name>, text-<name>, font-<name>). var() values live in
+   the imported stylesheet's :root. */
+@theme inline {
+  --font-sans: Poppins;
+  --color-site-import-background: var(--site-import-background);
+  --color-site-import-foreground: var(--site-import-foreground);
+  --color-site-import-primary: var(--site-import-primary);
+  --color-site-import-primary-foreground: var(--site-import-primary-foreground);
+  --color-site-import-accent: var(--site-import-accent);
+  --color-site-import-border: var(--site-import-border);
+  --color-site-import-card: var(--site-import-card);
+  --color-site-import-muted: var(--site-import-muted);
+  --color-swiper-theme-color: var(--swiper-theme-color);
+  --color-wp--preset--color--black: var(--wp--preset--color--black);
+  --color-wp--preset--color--cyan-bluish-gray: var(--wp--preset--color--cyan-bluish-gray);
+  --color-wp--preset--color--light-green-cyan: var(--wp--preset--color--light-green-cyan);
+  --color-wp--preset--color--luminous-vivid-amber: var(--wp--preset--color--luminous-vivid-amber);
+  --color-wp--preset--color--luminous-vivid-orange: var(--wp--preset--color--luminous-vivid-orange);
+  --color-wp--preset--color--pale-cyan-blue: var(--wp--preset--color--pale-cyan-blue);
+  --color-wp--preset--color--pale-pink: var(--wp--preset--color--pale-pink);
+  --color-wp--preset--color--vivid-cyan-blue: var(--wp--preset--color--vivid-cyan-blue);
+  --color-wp--preset--color--vivid-green-cyan: var(--wp--preset--color--vivid-green-cyan);
+  --color-wp--preset--color--vivid-purple: var(--wp--preset--color--vivid-purple);
+  --color-wp--preset--color--vivid-red: var(--wp--preset--color--vivid-red);
+  --color-wp--preset--color--white: var(--wp--preset--color--white);
+}
+/* site-import tokens: end */
