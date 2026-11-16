@@ -284,15 +284,21 @@ function Index() {
   );
 }
 
-function ImportedNav() {
+function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseSounds }: {
+  isOpen: boolean;
+  isSoundsMenuOpen: boolean;
+  onClose: () => void;
+  onOpenSounds: () => void;
+  onCloseSounds: () => void;
+}) {
   return (
-    <nav id="acm-mobile-menu" className={"menu-main-menu-container mm-menu mm-horizontal mm-ismenu mm-front mm-hasheader"}>
+    <nav id="acm-mobile-menu" aria-label="Mobile menu" className={`menu-main-menu-container mm-menu mm-horizontal mm-ismenu mm-front mm-hasheader${isOpen ? " dreamlinks-menu-open" : ""}${isSoundsMenuOpen ? " dreamlinks-submenu-open" : ""}`}>
       <div className={"mm-header"}>
         <a className={"mm-prev"} href="#" style={{ display: "none" }} />
         <span className={"mm-title"}>Menu</span>
-        <a className={"mm-next"} href="#" style={{ display: "none" }} />
+        <a className={"mm-next"} href="#" aria-label="Close menu" onClick={(event) => { event.preventDefault(); onClose(); }} />
       </div>
-      <ul id="acm-mmenu" className={"acm-mmenu mm-list mm-panel mm-opened mm-current"}>
+      <ul id="acm-mmenu" className={`acm-mmenu mm-list mm-panel${isSoundsMenuOpen ? "" : " mm-opened mm-current"}`}>
         <li id="menu-item-363" className={"menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-363"}>
           <a aria-current="page" className={"acm-mmenu-item-a"} href="/">Home</a>
         </li>
@@ -304,7 +310,7 @@ function ImportedNav() {
         </li>
         <li id="menu-item-2275" className={"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2275"}>
           <em className={"mm-counter"}>5</em>
-          <a className={"mm-subopen"} href="#mm-m0-p1" />
+          <a className={"mm-subopen"} href="#mm-m0-p1" aria-label="Open Sounds submenu" aria-expanded={isSoundsMenuOpen} onClick={(event) => { event.preventDefault(); onOpenSounds(); }} />
           <a className={"acm-mmenu-item-a"} href="#">Sounds</a>
         </li>
         <li id="menu-item-1953" className={"menu-item menu-item-type-post_type menu-item-object-page menu-item-1953"}>
@@ -317,9 +323,9 @@ function ImportedNav() {
           <a className={"nav-cta-btn"} href="#">Subscribe Now</a>
         </li>
       </ul>
-      <ul className={"sub-menu mm-list mm-panel"} id="mm-m0-p1">
+      <ul className={`sub-menu mm-list mm-panel${isSoundsMenuOpen ? " mm-opened mm-current" : ""}`} id="mm-m0-p1">
         <li className={"mm-subtitle"}>
-          <a className={"mm-subclose"} href="#acm-mmenu">Sounds</a>
+          <a className={"mm-subclose"} href="#acm-mmenu" onClick={(event) => { event.preventDefault(); onCloseSounds(); }}>Sounds</a>
         </li>
         <li id="menu-item-2278" className={"menu-item menu-item-type-post_type menu-item-object-page menu-item-2278"}>
           <a className={"acm-mmenu-item-a"} href="/golf-sounds">Golf Sounds</a>
@@ -341,7 +347,7 @@ function ImportedNav() {
   );
 }
 
-function ImportedHeader() {
+function ImportedHeader({ isMenuOpen, onToggleMenu }: { isMenuOpen: boolean; onToggleMenu: () => void }) {
   return (
     <header id="site-header" className={"hero_wave_light menu-dark header-dark sticky-dark-menu clr"} itemScope itemType="http://schema.org/WPHeader" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"sticky\"],\"removed\":[],\"threshold\":648},\"mobile\":{\"added\":[\"sticky\"],\"removed\":[],\"threshold\":633}}"}>
       <div id="site-header-inner" className={"clr  \x63ontainer hero_wave_light"}>
@@ -355,7 +361,7 @@ function ImportedHeader() {
             </a>
           </div>
           <div className={"acmthemes-mobile-menu-icon clr"}>
-            <a className={"hamburger-icon"} href="#acm-mobile-menu">
+            <a className={"hamburger-icon"} href="#acm-mobile-menu" aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen} onClick={(event) => { event.preventDefault(); onToggleMenu(); }}>
               <i className={"icon icon-menu"} />
             </a>
           </div>
@@ -382,7 +388,7 @@ function ImportedHeader() {
                 <a className={"menu-link sf-with-ul"} href="#">
                   <span className={"\x74ext-wrap"}>Sounds <span className={"nav-arrow fa fa-angle-down"} /></span>
                 </a>
-                <ul className={"sub-menu"} style={{ display: "none" }}>
+                <ul className={"sub-menu"}>
                   <li className={"menu-item menu-item-type-post_type menu-item-object-page menu-item-2278"}>
                     <a className={"menu-link"} href="/golf-sounds">
                       <span className={"\x74ext-wrap"}>Golf Sounds</span>
@@ -433,7 +439,7 @@ function ImportedHeader() {
   );
 }
 
-function ImportedSectionGolfSleepSoundsApp() {
+function ImportedSectionGolfSleepSoundsApp({ isMobile }: { isMobile: boolean }) {
   return (
     <section className={"elementor-section elementor-top-section elementor-element elementor-element-ed96999 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right"}>
       <div className={"elementor-container elementor-column-gap-default"}>
