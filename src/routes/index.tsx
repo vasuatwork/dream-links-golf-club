@@ -97,13 +97,13 @@ function Index() {
                             </h2>
                             <div className={"acm_heading-desc"}>
                               <p>
-                                <span className={"TextRun SCXW133782473 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                                <span className={"TextRun SCXW133782473 BCX0"} lang="EN-IN">
                                   <span className={"NormalTextRun SCXW133782473 BCX0"}>Every peaceful morning starts with one quiet decision the night before. </span>
                                 </span>
-                                <span className={"TextRun SCXW133782473 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                                <span className={"TextRun SCXW133782473 BCX0"} lang="EN-IN">
                                   <span className={"NormalTextRun SpellingErrorV2Themed SCXW133782473 BCX0"}>DreamLinks</span>
                                 </span>
-                                <span className={"TextRun SCXW133782473 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                                <span className={"TextRun SCXW133782473 BCX0"} lang="EN-IN">
                                   <span className={"NormalTextRun SCXW133782473 BCX0"}> helps transform bedtime into a calming ritual with premium sleep sounds, relaxing nature audio, and thoughtful tools that make every night feel restorative.</span>
                                 </span>
                                 <span className={"EOP Selected SCXW133782473 BCX0"}> </span>
@@ -454,7 +454,7 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
             </div>
             <div className={"elementor-element elementor-element-07e7295 elementor-widget elementor-widget-text-editor"}>
               <p>
-                <span className={"TextRun SCXW152607188 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                <span className={"TextRun SCXW152607188 BCX0"} lang="EN-IN">
                   <span className={"NormalTextRun SCXW152607188 BCX0"}>Discover premium Golf Sleep Sounds, calming Nature Sounds, White Noise, Ocean Waves, and Sleep Music designed to help you fall asleep naturally. </span>
                   <span className={"NormalTextRun SpellingErrorV2Themed SCXW152607188 BCX0"}>DreamLinks</span>
                   <span className={"NormalTextRun SCXW152607188 BCX0"}> is your all-in-one Sleep Aid App for relaxation, stress relief, and deeper, more peaceful sleep.</span>
@@ -737,45 +737,45 @@ function ImportedSectionYourBedtimeYourWay() {
                   </h2>
                   <div className={"acm_heading-desc"}>
                     <p>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>No two nights are the same, and neither is your sleep. </span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SpellingErrorV2Themed SCXW29526918 BCX0"}>DreamLinks</span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}> helps you create a personalised bedtime experience with </span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>Sleep Sounds</span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>, </span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>Nature Sounds</span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>, </span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>White Noise</span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>, and calming </span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>Golf Course Ambience</span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>. Whether </span>
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>you're</span>
                         <span className={"NormalTextRun SCXW29526918 BCX0"}> looking to reduce stress, relax after a busy day, or </span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>fall asleep naturally</span>
                       </span>
-                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW29526918 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW29526918 BCX0"}>, </span>
                         <span className={"NormalTextRun SpellingErrorV2Themed SCXW29526918 BCX0"}>DreamLinks</span>
                         <span className={"NormalTextRun SCXW29526918 BCX0"}> gives you the freedom to choose the sounds that work best for you.</span>
@@ -860,13 +860,13 @@ function ImportedSection299() {
                   </h2>
                   <div className={"acm_heading-desc"}>
                     <p>
-                      <span className={"TextRun SCXW62293353 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW62293353 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW62293353 BCX0"}>Every peaceful night begins with a simple choice. Unlock the full </span>
                       </span>
-                      <span className={"TextRun SCXW62293353 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW62293353 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SpellingErrorV2Themed SCXW62293353 BCX0"}>DreamLinks</span>
                       </span>
-                      <span className={"TextRun SCXW62293353 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW62293353 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW62293353 BCX0"}> experience and enjoy calming sounds, personalised sleep tools, and everything you need to relax, recharge, and wake up refreshed.</span>
                       </span>
                       <span className={"EOP Selected SCXW62293353 BCX0"}> </span>
@@ -901,15 +901,15 @@ function ImportedSectionBeautifulByDesignPeaceful() {
                           </h2>
                           <div className={"acm_heading-desc"}>
                             <p>
-                              <span className={"TextRun SCXW74785292 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                              <span className={"TextRun SCXW74785292 BCX0"} lang="EN-IN">
                                 <span className={"NormalTextRun SCXW74785292 BCX0"}>A calm mind begins with a calm experience. </span>
                               </span>
                               <a href="/about-us">
-                                <span className={"TextRun SCXW74785292 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                                <span className={"TextRun SCXW74785292 BCX0"} lang="EN-IN">
                                   <span className={"NormalTextRun SpellingErrorV2Themed SCXW74785292 BCX0"}>DreamLinks</span>
                                 </span>
                               </a>
-                              <span className={"TextRun SCXW74785292 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                              <span className={"TextRun SCXW74785292 BCX0"} lang="EN-IN">
                                 <span className={"NormalTextRun SCXW74785292 BCX0"}> combines elegant design, intuitive navigation, and distraction-free interactions, making every bedtime routine feel simple, effortless, and relaxing.</span>
                               </span>
                               <span className={"EOP Selected SCXW74785292 BCX0"}> </span>
@@ -944,13 +944,13 @@ function ImportedSectionYourBestNightsAre() {
                   </h2>
                   <div className={"acm_heading-desc"}>
                     <p>
-                      <span className={"TextRun SCXW141936191 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW141936191 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW141936191 BCX0"}>Start your journey to calmer evenings, deeper sleep, and brighter mornings with </span>
                       </span>
-                      <span className={"TextRun SCXW141936191 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW141936191 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SpellingErrorV2Themed SCXW141936191 BCX0"}>DreamLinks</span>
                       </span>
-                      <span className={"TextRun SCXW141936191 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                      <span className={"TextRun SCXW141936191 BCX0"} lang="EN-IN">
                         <span className={"NormalTextRun SCXW141936191 BCX0"}>. Download the app today and discover a peaceful bedtime experience designed to help you relax, recharge, and wake up feeling refreshed.</span>
                       </span>
                       <span className={"EOP Selected SCXW141936191 BCX0"}> </span>
@@ -1088,13 +1088,13 @@ function ImportedSectionSleepBetterStartsWith() {
                           </h2>
                           <div className={"acm_heading-desc"}>
                             <p>
-                              <span className={"TextRun SCXW249141300 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                              <span className={"TextRun SCXW249141300 BCX0"} lang="EN-IN">
                                 <span className={"NormalTextRun SCXW249141300 BCX0"}>Join the </span>
                               </span>
-                              <span className={"TextRun SCXW249141300 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                              <span className={"TextRun SCXW249141300 BCX0"} lang="EN-IN">
                                 <span className={"NormalTextRun SpellingErrorV2Themed SCXW249141300 BCX0"}>DreamLinks</span>
                               </span>
-                              <span className={"TextRun SCXW249141300 BCX0"} lang="EN-IN" xmlLang="EN-IN">
+                              <span className={"TextRun SCXW249141300 BCX0"} lang="EN-IN">
                                 <span className={"NormalTextRun SCXW249141300 BCX0"}> community and receive calming sleep tips, exclusive updates, new sound collections, and wellness </span>
                                 <span className={"NormalTextRun SCXW249141300 BCX0"}>inspirat</span>
                                 <span className={"NormalTextRun SCXW249141300 BCX0"}>ion—delivered with care, never spam.</span>
