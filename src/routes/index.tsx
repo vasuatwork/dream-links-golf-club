@@ -287,12 +287,13 @@ function Index() {
   );
 }
 
-function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseSounds }: {
+function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseSounds, onOpenMenu }: {
   isOpen: boolean;
   isSoundsMenuOpen: boolean;
   onClose: () => void;
   onOpenSounds: () => void;
   onCloseSounds: () => void;
+  onOpenMenu: () => void;
 }) {
   return (
     <nav id="acm-mobile-menu" aria-label="Mobile menu" aria-hidden={!isOpen} className={`menu-main-menu-container mm-menu mm-horizontal mm-ismenu mm-front mm-hasheader${isOpen ? " dreamlinks-menu-open mm-current" : ""}${isSoundsMenuOpen ? " dreamlinks-submenu-open" : ""}`}>
@@ -313,7 +314,7 @@ function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseS
         </li>
         <li id="menu-item-2275" className={"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2275"}>
           <em className={"mm-counter"}>5</em>
-          <a className={"mm-subopen"} href="#mm-m0-p1" aria-label="Open Sounds submenu" aria-expanded={isSoundsMenuOpen} onClick={(event) => { event.preventDefault(); onOpenSounds(); }} />
+          <a className={"mm-subopen"} href="#mm-m0-p1" aria-label="Open Sounds submenu" aria-expanded={isSoundsMenuOpen} onClick={(event) => { event.preventDefault(); if (!isOpen) onOpenMenu(); onOpenSounds(); }} />
           <a className={"acm-mmenu-item-a"} href="#">Sounds</a>
         </li>
         <li id="menu-item-1953" className={"menu-item menu-item-type-post_type menu-item-object-page menu-item-1953"}>
