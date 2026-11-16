@@ -6047,7 +6047,7 @@ html.mm-opened { overflow-x: hidden; }
 html.mm-opening #mm-blocker, html.mm-opening .mm-fixed-bottom, html.mm-opening .mm-fixed-top, html.mm-opening .mm-page { left: 80%; }
 .mm-menu { width: 80%; }
 /* Interactive mobile menu state, reproduced without the source site's menu plugin. */
-#acm-mobile-menu.dreamlinks-menu-open { display: block; z-index: 1000000; width: min(80%, 440px); background: var(--site-import-menu-surface); color: var(--site-import-menu-foreground); box-shadow: 2px 0 18px var(--site-import-menu-shadow); }
+#acm-mobile-menu.dreamlinks-menu-open { display: block; z-index: 1000000; width: min(80%, 440px); left: 0; background: var(--site-import-menu-surface); color: var(--site-import-menu-foreground); box-shadow: 2px 0 18px var(--site-import-menu-shadow); }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-header { height: 76px; padding-top: 21px; text-align: center; }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-header .mm-next { position: absolute; right: 12px; top: 20px; display: block !important; width: 36px; height: 36px; }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-header .mm-next::before { content: "×"; position: absolute; inset: 0; color: var(--site-import-menu-foreground); font: 28px/30px sans-serif; text-align: center; }
@@ -6056,8 +6056,16 @@ html.mm-opening #mm-blocker, html.mm-opening .mm-fixed-bottom, html.mm-opening .
 #acm-mobile-menu.dreamlinks-menu-open > .mm-panel.mm-opened { left: 0; }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-panel.mm-subopened { left: -40%; }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1.mm-current { left: 0; }
+#acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1 { transition: transform 0.3s ease; transform: translateX(100%); }
+#acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1.mm-current { transform: translateX(0); }
+#acm-mobile-menu.dreamlinks-menu-open > #acm-mmenu.mm-subopened { transform: translateX(-40%); }
+#site-header.sticky { z-index: 999998; }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1 { left: 100%; }
 #acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1.mm-current { left: 0; }
+#acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1 { transition: transform 0.3s ease; transform: translateX(100%); }
+#acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1.mm-current { transform: translateX(0); }
+#acm-mobile-menu.dreamlinks-menu-open > #acm-mmenu.mm-subopened { transform: translateX(-40%); }
+#site-header.sticky { z-index: 999998; }
 #acm-mobile-menu.dreamlinks-menu-open .mm-title { color: var(--site-import-menu-foreground); }
 #acm-mobile-menu.dreamlinks-menu-open .mm-subtitle { display: block; }
 #mm-blocker.dreamlinks-blocker-open { display: block; position: fixed; inset: 0; z-index: 999999; background: var(--site-import-menu-scrim); }
@@ -8919,6 +8927,9 @@ div#mc4wp_form_widget-1 { display: none; }
   #site-navigation-wrap { display: none !important; }
   body.default-breakpoint .acmthemes-mobile-menu-icon { display: block; }
   #acm-mobile-menu.dreamlinks-menu-open { width: min(80vw, 440px); }
+  #acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1 { transform: translateX(100%); }
+  #acm-mobile-menu.dreamlinks-menu-open > .mm-panel#mm-m0-p1.mm-current { transform: translateX(0); }
+  #acm-mobile-menu.dreamlinks-menu-open > #acm-mmenu.mm-subopened { transform: translateX(-40%); }
 }
 @media (min-width: 768px) {
   #site-navigation-wrap .dropdown-menu li.dropdown:hover > .sub-menu,
