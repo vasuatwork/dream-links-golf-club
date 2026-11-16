@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, RefObject } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -350,7 +350,7 @@ function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseS
   );
 }
 
-function ImportedHeader({ menuToggleRef, isMenuOpen, onToggleMenu }: { menuToggleRef: React.RefObject<HTMLAnchorElement | null>; isMenuOpen: boolean; onToggleMenu: () => void }) {
+function ImportedHeader({ menuToggleRef, isMenuOpen, onToggleMenu }: { menuToggleRef: RefObject<HTMLAnchorElement | null>; isMenuOpen: boolean; onToggleMenu: () => void }) {
   return (
     <header id="site-header" className={"hero_wave_light menu-dark header-dark sticky-dark-menu clr"} itemScope itemType="http://schema.org/WPHeader" data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"sticky\"],\"removed\":[],\"threshold\":648},\"mobile\":{\"added\":[\"sticky\"],\"removed\":[],\"threshold\":633}}"}>
       <div id="site-header-inner" className={"clr  \x63ontainer hero_wave_light"}>
