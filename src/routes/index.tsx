@@ -1,29 +1,57 @@
 import type { CSSProperties } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/captured.css?raw";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Sleep Sounds App for Better Sleep \u0026 Relaxation - Dream Links" }] }),
+  head: () => ({
+    meta: [
+      { title: "Sleep Sounds App for Better Sleep & Relaxation | DreamLinks" },
+      { name: "description", content: "Discover DreamLinks sleep sounds, nature audio, white noise, and calming tools for deeper, more peaceful sleep." },
+      { property: "og:title", content: "Sleep Sounds App for Better Sleep & Relaxation | DreamLinks" },
+      { property: "og:description", content: "Discover DreamLinks sleep sounds, nature audio, white noise, and calming tools for deeper, more peaceful sleep." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "home page acmthemes-theme acm-btn-default default-breakpoint blog-2-columns elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });
 
 function Index() {
   const isMobile = useSyncExternalStore(subscribeMobile, () => matchMedia("(max-width: 767px)").matches, () => false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isSoundsMenuOpen, setSoundsMenuOpen] = useState(false);
   useImportedLayout();
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        setSoundsMenuOpen(false);
+      }
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
   return (
     <>
       <style>{capturedCSS}</style>
-      <ImportedNav />
+      <ImportedNav
+        isOpen={isMenuOpen}
+        isSoundsMenuOpen={isSoundsMenuOpen}
+        onClose={() => { setMenuOpen(false); setSoundsMenuOpen(false); }}
+        onOpenSounds={() => setSoundsMenuOpen(true)}
+        onCloseSounds={() => setSoundsMenuOpen(false)}
+      />
       <div id="outer-wrap" className={"\x77rap-boxshadow site clr mm-page"}>
         <div id="wrap" className={"clr"}>
           <div className={"siteheader-holder"} style={{ height: "120px", display: "none" }} />
-          <ImportedHeader />
+          <ImportedHeader isMenuOpen={isMenuOpen} onToggleMenu={() => setMenuOpen((open) => !open)} />
           <main id="main" className={"site-main clr"}>
             <div data-elementor-id="1639" className={"elementor elementor-1639"}>
-              <ImportedSectionGolfSleepSoundsApp />
+              <ImportedSectionGolfSleepSoundsApp isMobile={isMobile} />
               <section className={"elementor-section elementor-top-section elementor-element elementor-element-6f9c623 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right"}>
                 <div className={"elementor-container elementor-column-gap-default"}>
                   <div className={"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9f30cff"} data-element_type="column">
@@ -251,7 +279,7 @@ function Index() {
       </div>
       <span id="elementor-device-mode" className={"elementor-screen-only"} />
       <svg style={{ display: "none" }} className={"e-font-icon-svg-symbols"} />
-      <div id="mm-blocker" />
+      <div id="mm-blocker" onClick={() => { setMenuOpen(false); setSoundsMenuOpen(false); }} />
     </>
   );
 }
