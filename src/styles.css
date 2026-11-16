@@ -175,10 +175,6 @@
   --site-import-card: oklch(1 0 0 / 0.3);
   --muted: oklch(0.96124 0.00414 271.37);
   --site-import-muted: oklch(0.96124 0.00414 271.37);
-  --site-import-menu-surface: oklch(1 0 0);
-  --site-import-menu-foreground: oklch(0.42 0.035 263);
-  --site-import-menu-shadow: oklch(0.2 0.02 270 / 0.12);
-  --site-import-menu-scrim: oklch(0.2 0.02 270 / 0.16);
 }
 /* Design tokens captured from the imported site, registered as Tailwind
    utilities (bg-<name>, text-<name>, font-<name>). var() values live in
