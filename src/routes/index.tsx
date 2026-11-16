@@ -47,6 +47,7 @@ function Index() {
         onClose={() => { setMenuOpen(false); setSoundsMenuOpen(false); menuToggleRef.current?.focus(); }}
         onOpenSounds={() => setSoundsMenuOpen(true)}
         onCloseSounds={() => setSoundsMenuOpen(false)}
+        onOpenMenu={() => setMenuOpen(true)}
       />
       <div id="outer-wrap" className={`wrap-boxshadow site clr mm-page${isMenuOpen ? " dreamlinks-page-menu-open" : ""}`}>
         <div id="wrap" className={"clr"}>
