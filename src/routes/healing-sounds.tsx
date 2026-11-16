@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/healing-sounds.css?raw";
 
 export const Route = createFileRoute("/healing-sounds")({
-  head: () => ({ meta: [{ title: "Healing Sounds - dreamlinks" }] }),
+  head: () => ({ meta: [{ title: "Healing Sounds | DreamLinks" }, { name: "description", content: "Discover calming audio for relaxation, meditation, mindfulness, focus, and a more peaceful bedtime." }, { property: "og:title", content: "Healing Sounds | DreamLinks" }, { property: "og:description", content: "Discover calming audio for relaxation, meditation, mindfulness, focus, and a more peaceful bedtime." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });

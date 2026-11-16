@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/random-sounds.css?raw";
 
 export const Route = createFileRoute("/random-sounds")({
-  head: () => ({ meta: [{ title: "Random Sounds - dreamlinks" }] }),
+  head: () => ({ meta: [{ title: "Random Sounds | DreamLinks" }, { name: "description", content: "Discover unexpected nature, animal, everyday, and music sounds for relaxation, focus, or a little fun." }, { property: "og:title", content: "Random Sounds | DreamLinks" }, { property: "og:description", content: "Discover unexpected nature, animal, everyday, and music sounds for relaxation, focus, or a little fun." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });

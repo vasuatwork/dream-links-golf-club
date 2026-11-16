@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/blog.css?raw";
 
 export const Route = createFileRoute("/blog")({
-  head: () => ({ meta: [{ title: "Dream Links Blog | Golf Sleep Sounds, White Noise \u0026 Better Sleep" }] }),
+  head: () => ({ meta: [{ title: "DreamLinks Blog | Sleep, Relaxation, and Nature Sounds" }, { name: "description", content: "Read DreamLinks articles on better sleep, relaxing nature sounds, bedtime routines, and golf-inspired ambience." }, { property: "og:title", content: "DreamLinks Blog | Sleep, Relaxation, and Nature Sounds" }, { property: "og:description", content: "Read DreamLinks articles on better sleep, relaxing nature sounds, bedtime routines, and golf-inspired ambience." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "blog acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs" } } },
   component: Index,
 });

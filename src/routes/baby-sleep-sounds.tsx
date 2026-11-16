@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/baby-sleep-sounds.css?raw";
 
 export const Route = createFileRoute("/baby-sleep-sounds")({
-  head: () => ({ meta: [{ title: "Baby Sleep Sounds - dreamlinks" }] }),
+  head: () => ({ meta: [{ title: "Baby Sleep Sounds | DreamLinks" }, { name: "description", content: "Explore gentle lullabies, white noise, and nature-inspired sounds for a calmer baby bedtime routine." }, { property: "og:title", content: "Baby Sleep Sounds | DreamLinks" }, { property: "og:description", content: "Explore gentle lullabies, white noise, and nature-inspired sounds for a calmer baby bedtime routine." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });

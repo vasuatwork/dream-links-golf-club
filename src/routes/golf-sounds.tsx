@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/golf-sounds.css?raw";
 
 export const Route = createFileRoute("/golf-sounds")({
-  head: () => ({ meta: [{ title: "Golf Sounds - dreamlinks" }] }),
+  head: () => ({ meta: [{ title: "Golf Sounds | DreamLinks" }, { name: "description", content: "Unwind with golf-inspired soundscapes, peaceful course ambience, and nature sounds for focus and sleep." }, { property: "og:title", content: "Golf Sounds | DreamLinks" }, { property: "og:description", content: "Unwind with golf-inspired soundscapes, peaceful course ambience, and nature sounds for focus and sleep." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });

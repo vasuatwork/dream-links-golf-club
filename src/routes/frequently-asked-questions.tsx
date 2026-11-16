@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/frequently-asked-questions.css?raw";
 
 export const Route = createFileRoute("/frequently-asked-questions")({
-  head: () => ({ meta: [{ title: "Frequently asked questions - dreamlinks" }] }),
+  head: () => ({ meta: [{ title: "DreamLinks FAQ | App, Sounds, and Downloads" }, { name: "description", content: "Find answers about DreamLinks, available sound collections, app downloads, and getting a more relaxing night's sleep." }, { property: "og:title", content: "DreamLinks FAQ | App, Sounds, and Downloads" }, { property: "og:description", content: "Find answers about DreamLinks, available sound collections, app downloads, and getting a more relaxing night's sleep." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page page-id-1154 acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });

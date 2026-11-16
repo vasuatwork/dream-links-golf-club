@@ -4,7 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/contact.css?raw";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [{ title: "Contact Dream Links | Customer Support \u0026 Sleep App Help" }] }),
+  head: () => ({ meta: [{ title: "Contact DreamLinks | Customer Support" }, { name: "description", content: "Get in touch with the DreamLinks team for help with the app, relaxing sounds, or general questions." }, { property: "og:title", content: "Contact DreamLinks | Customer Support" }, { property: "og:description", content: "Get in touch with the DreamLinks team for help with the app, relaxing sounds, or general questions." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page page-id-366 acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });

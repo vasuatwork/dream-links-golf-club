@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/pages/nature-sounds.css?raw";
 
 export const Route = createFileRoute("/nature-sounds")({
-  head: () => ({ meta: [{ title: "Nature Sounds - dreamlinks" }] }),
+  head: () => ({ meta: [{ title: "Nature Sounds | DreamLinks" }, { name: "description", content: "Bring the calm of nature with rain, ocean waves, forests, rivers, and birdsong for relaxation and focus." }, { property: "og:title", content: "Nature Sounds | DreamLinks" }, { property: "og:description", content: "Bring the calm of nature with rain, ocean waves, forests, rivers, and birdsong for relaxation and focus." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }),
   staticData: { importedDocument: { html: { "lang": "en-US" }, body: { "className": "page acmthemes-theme acm-btn-default default-breakpoint blog-2-columns has-breadcrumbs elementor-kit-7", "data-elementor-device-mode": "desktop" } } },
   component: Index,
 });
