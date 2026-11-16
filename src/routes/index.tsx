@@ -316,7 +316,7 @@ function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseS
         <li id="menu-item-2275" className={"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2275"}>
           <em className={"mm-counter"}>5</em>
           <a className={"mm-subopen"} href="#mm-m0-p1" aria-label="Open Sounds submenu" aria-expanded={isSoundsMenuOpen} onClick={(event) => { event.preventDefault(); if (!isOpen) onOpenMenu(); onOpenSounds(); }} />
-          <a className={"acm-mmenu-item-a"} href="#">Sounds</a>
+          <a className={"acm-mmenu-item-a"} href="/golf-sounds">Sounds</a>
         </li>
         <li id="menu-item-1953" className={"menu-item menu-item-type-post_type menu-item-object-page menu-item-1953"}>
           <a className={"acm-mmenu-item-a"} href="/blog">Blog</a>
@@ -390,7 +390,7 @@ function ImportedHeader({ menuToggleRef, isMenuOpen, onToggleMenu }: { menuToggl
                 </a>
               </li>
               <li className={"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-2275 nomega-dropdown"}>
-                <a className={"menu-link sf-with-ul"} href="#">
+                <a className={"menu-link sf-with-ul"} href="/golf-sounds" aria-haspopup="true">
                   <span className={"\x74ext-wrap"}>Sounds <span className={"nav-arrow fa fa-angle-down"} /></span>
                 </a>
                 <ul className={"sub-menu"}>
