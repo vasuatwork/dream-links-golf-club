@@ -50,7 +50,7 @@ function Index() {
       <div id="outer-wrap" className={"\x77rap-boxshadow site clr mm-page"}>
         <div id="wrap" className={"clr"}>
           <div className={"siteheader-holder"} style={{ height: "120px", display: "none" }} />
-          <ImportedHeader isMenuOpen={isMenuOpen} onToggleMenu={() => setMenuOpen((open) => !open)} />
+          <ImportedHeader menuToggleRef={menuToggleRef} isMenuOpen={isMenuOpen} onToggleMenu={() => setMenuOpen((open) => !open)} />
           <main id="main" className={"site-main clr"}>
             <div data-elementor-id="1639" className={"elementor elementor-1639"}>
               <ImportedSectionGolfSleepSoundsApp isMobile={isMobile} />
