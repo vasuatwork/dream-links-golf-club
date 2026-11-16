@@ -509,76 +509,16 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
                   </div>
                   <div id="mobile_slider" className={"owl-carousel owl-theme mob-hero-slider owl-loaded owl-drag"}>
                     <div className={"owl-stage-outer"}>
-                      <div className={"owl-stage"} style={{ transform: "translate3d(-1240px, 0px, 0px)", transition: "1.5s", width: "2170px" }}>
-                        <div className={"owl-item cloned"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/1d33ae4f472f4c02.png" alt="" />
-                            </div>
+                      <div className={"owl-stage"} style={{ transform: `translate3d(-${heroSlide * 310}px, 0px, 0px)`, transition: "1.5s", width: "930px" }}>
+                        {["/site-assets/1d33ae4f472f4c02.png", "/site-assets/8ae03d98c9f5fe3f.png", "/site-assets/0408ce5db6ebbe40.png"].map((src, index) => (
+                          <div key={src} className={`owl-item${heroSlide === index ? " active" : ""}`} style={{ width: "300px", marginRight: "10px" }}>
+                            <div className={"item"}><div className={"slider_img"}><img decoding="async" src={src} alt={["DreamLinks app home screen", "DreamLinks sleep sound categories", "DreamLinks sleep welcome screen"][index]} /></div></div>
                           </div>
-                        </div>
-                        <div className={"owl-item cloned"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/8ae03d98c9f5fe3f.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"owl-item"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/0408ce5db6ebbe40.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"owl-item"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/1d33ae4f472f4c02.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"owl-item active"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/8ae03d98c9f5fe3f.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"owl-item cloned"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/0408ce5db6ebbe40.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className={"owl-item cloned"} style={{ width: "300px", marginRight: "10px" }}>
-                          <div className={"item"}>
-                            <div className={"slider_img"}>
-                              <img decoding="async" src="/site-assets/1d33ae4f472f4c02.png" alt="" />
-                            </div>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
-                    <div className={"owl-nav disabled"}>
-                      <button type="button" role="presentation" className={"owl-prev btn"}>
-                        <span>‹</span>
-                      </button>
-                      <button type="button" role="presentation" className={"owl-next btn"}>
-                        <span>›</span>
-                      </button>
-                    </div>
-                    <div className={"owl-dots"}>
-                      <button role="button" className={"owl-dot"}>
-                        <span />
-                      </button>
-                      <button role="button" className={"owl-dot"}>
-                        <span />
-                      </button>
-                      <button role="button" className={"owl-dot active"}>
-                        <span />
-                      </button>
+                    <div className={"owl-dots"} aria-label="App preview slides">
+                      {[0, 1, 2].map((index) => <button key={index} type="button" className={`owl-dot${heroSlide === index ? " active" : ""}`} aria-label={`Show app screen ${index + 1}`} aria-pressed={heroSlide === index} onClick={() => onHeroSlideChange(index)}><span /></button>)}
                     </div>
                   </div>
                   <div className={"slider_frame"}>
