@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import capturedCSS from "../styles/captured.css?raw";
@@ -23,6 +23,7 @@ function Index() {
   const isMobile = useSyncExternalStore(subscribeMobile, () => matchMedia("(max-width: 767px)").matches, () => false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSoundsMenuOpen, setSoundsMenuOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLAnchorElement>(null);
   useImportedLayout();
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -30,6 +31,7 @@ function Index() {
       if (event.key === "Escape") {
         setMenuOpen(false);
         setSoundsMenuOpen(false);
+        menuToggleRef.current?.focus();
       }
     };
     document.addEventListener("keydown", closeOnEscape);
@@ -41,7 +43,7 @@ function Index() {
       <ImportedNav
         isOpen={isMenuOpen}
         isSoundsMenuOpen={isSoundsMenuOpen}
-        onClose={() => { setMenuOpen(false); setSoundsMenuOpen(false); }}
+        onClose={() => { setMenuOpen(false); setSoundsMenuOpen(false); menuToggleRef.current?.focus(); }}
         onOpenSounds={() => setSoundsMenuOpen(true)}
         onCloseSounds={() => setSoundsMenuOpen(false)}
       />
@@ -279,7 +281,7 @@ function Index() {
       </div>
       <span id="elementor-device-mode" className={"elementor-screen-only"} />
       <svg style={{ display: "none" }} className={"e-font-icon-svg-symbols"} />
-      <div id="mm-blocker" onClick={() => { setMenuOpen(false); setSoundsMenuOpen(false); }} />
+      <div id="mm-blocker" className={isMenuOpen ? "dreamlinks-blocker-open" : ""} onClick={() => { setMenuOpen(false); setSoundsMenuOpen(false); menuToggleRef.current?.focus(); }} />
     </>
   );
 }
@@ -292,13 +294,13 @@ function ImportedNav({ isOpen, isSoundsMenuOpen, onClose, onOpenSounds, onCloseS
   onCloseSounds: () => void;
 }) {
   return (
-    <nav id="acm-mobile-menu" aria-label="Mobile menu" className={`menu-main-menu-container mm-menu mm-horizontal mm-ismenu mm-front mm-hasheader${isOpen ? " dreamlinks-menu-open" : ""}${isSoundsMenuOpen ? " dreamlinks-submenu-open" : ""}`}>
+    <nav id="acm-mobile-menu" aria-label="Mobile menu" aria-hidden={!isOpen} className={`menu-main-menu-container mm-menu mm-horizontal mm-ismenu mm-front mm-hasheader${isOpen ? " dreamlinks-menu-open mm-current" : ""}${isSoundsMenuOpen ? " dreamlinks-submenu-open" : ""}`}>
       <div className={"mm-header"}>
         <a className={"mm-prev"} href="#" style={{ display: "none" }} />
         <span className={"mm-title"}>Menu</span>
         <a className={"mm-next"} href="#" aria-label="Close menu" onClick={(event) => { event.preventDefault(); onClose(); }} />
       </div>
-      <ul id="acm-mmenu" className={`acm-mmenu mm-list mm-panel${isSoundsMenuOpen ? "" : " mm-opened mm-current"}`}>
+      <ul id="acm-mmenu" className={`acm-mmenu mm-list mm-panel${isSoundsMenuOpen ? " mm-subopened" : " mm-opened mm-current"}`}>
         <li id="menu-item-363" className={"menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-363"}>
           <a aria-current="page" className={"acm-mmenu-item-a"} href="/">Home</a>
         </li>
@@ -361,7 +363,7 @@ function ImportedHeader({ isMenuOpen, onToggleMenu }: { isMenuOpen: boolean; onT
             </a>
           </div>
           <div className={"acmthemes-mobile-menu-icon clr"}>
-            <a className={"hamburger-icon"} href="#acm-mobile-menu" aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen} onClick={(event) => { event.preventDefault(); onToggleMenu(); }}>
+            <a ref={menuToggleRef} className={"hamburger-icon"} href="#acm-mobile-menu" aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen} onClick={(event) => { event.preventDefault(); onToggleMenu(); }}>
               <i className={"icon icon-menu"} />
             </a>
           </div>
