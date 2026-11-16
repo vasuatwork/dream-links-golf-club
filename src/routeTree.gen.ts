@@ -10,33 +10,155 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as BabySleepSoundsRouteImport } from './routes/baby-sleep-sounds'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FrequentlyAskedQuestionsRouteImport } from './routes/frequently-asked-questions'
+import { Route as GolfSoundsRouteImport } from './routes/golf-sounds'
+import { Route as HealingSoundsRouteImport } from './routes/healing-sounds'
+import { Route as NatureSoundsRouteImport } from './routes/nature-sounds'
+import { Route as RandomSoundsRouteImport } from './routes/random-sounds'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BabySleepSoundsRoute = BabySleepSoundsRouteImport.update({
+  id: '/baby-sleep-sounds',
+  path: '/baby-sleep-sounds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrequentlyAskedQuestionsRoute =
+  FrequentlyAskedQuestionsRouteImport.update({
+    id: '/frequently-asked-questions',
+    path: '/frequently-asked-questions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GolfSoundsRoute = GolfSoundsRouteImport.update({
+  id: '/golf-sounds',
+  path: '/golf-sounds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealingSoundsRoute = HealingSoundsRouteImport.update({
+  id: '/healing-sounds',
+  path: '/healing-sounds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NatureSoundsRoute = NatureSoundsRouteImport.update({
+  id: '/nature-sounds',
+  path: '/nature-sounds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RandomSoundsRoute = RandomSoundsRouteImport.update({
+  id: '/random-sounds',
+  path: '/random-sounds',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/baby-sleep-sounds': typeof BabySleepSoundsRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/frequently-asked-questions': typeof FrequentlyAskedQuestionsRoute
+  '/golf-sounds': typeof GolfSoundsRoute
+  '/healing-sounds': typeof HealingSoundsRoute
+  '/nature-sounds': typeof NatureSoundsRoute
+  '/random-sounds': typeof RandomSoundsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/baby-sleep-sounds': typeof BabySleepSoundsRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/frequently-asked-questions': typeof FrequentlyAskedQuestionsRoute
+  '/golf-sounds': typeof GolfSoundsRoute
+  '/healing-sounds': typeof HealingSoundsRoute
+  '/nature-sounds': typeof NatureSoundsRoute
+  '/random-sounds': typeof RandomSoundsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/baby-sleep-sounds': typeof BabySleepSoundsRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
+  '/frequently-asked-questions': typeof FrequentlyAskedQuestionsRoute
+  '/golf-sounds': typeof GolfSoundsRoute
+  '/healing-sounds': typeof HealingSoundsRoute
+  '/nature-sounds': typeof NatureSoundsRoute
+  '/random-sounds': typeof RandomSoundsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/baby-sleep-sounds'
+    | '/blog'
+    | '/contact'
+    | '/frequently-asked-questions'
+    | '/golf-sounds'
+    | '/healing-sounds'
+    | '/nature-sounds'
+    | '/random-sounds'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-us'
+    | '/baby-sleep-sounds'
+    | '/blog'
+    | '/contact'
+    | '/frequently-asked-questions'
+    | '/golf-sounds'
+    | '/healing-sounds'
+    | '/nature-sounds'
+    | '/random-sounds'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/baby-sleep-sounds'
+    | '/blog'
+    | '/contact'
+    | '/frequently-asked-questions'
+    | '/golf-sounds'
+    | '/healing-sounds'
+    | '/nature-sounds'
+    | '/random-sounds'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  BabySleepSoundsRoute: typeof BabySleepSoundsRoute
+  BlogRoute: typeof BlogRoute
+  ContactRoute: typeof ContactRoute
+  FrequentlyAskedQuestionsRoute: typeof FrequentlyAskedQuestionsRoute
+  GolfSoundsRoute: typeof GolfSoundsRoute
+  HealingSoundsRoute: typeof HealingSoundsRoute
+  NatureSoundsRoute: typeof NatureSoundsRoute
+  RandomSoundsRoute: typeof RandomSoundsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +170,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/baby-sleep-sounds': {
+      id: '/baby-sleep-sounds'
+      path: '/baby-sleep-sounds'
+      fullPath: '/baby-sleep-sounds'
+      preLoaderRoute: typeof BabySleepSoundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/frequently-asked-questions': {
+      id: '/frequently-asked-questions'
+      path: '/frequently-asked-questions'
+      fullPath: '/frequently-asked-questions'
+      preLoaderRoute: typeof FrequentlyAskedQuestionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/golf-sounds': {
+      id: '/golf-sounds'
+      path: '/golf-sounds'
+      fullPath: '/golf-sounds'
+      preLoaderRoute: typeof GolfSoundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/healing-sounds': {
+      id: '/healing-sounds'
+      path: '/healing-sounds'
+      fullPath: '/healing-sounds'
+      preLoaderRoute: typeof HealingSoundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nature-sounds': {
+      id: '/nature-sounds'
+      path: '/nature-sounds'
+      fullPath: '/nature-sounds'
+      preLoaderRoute: typeof NatureSoundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/random-sounds': {
+      id: '/random-sounds'
+      path: '/random-sounds'
+      fullPath: '/random-sounds'
+      preLoaderRoute: typeof RandomSoundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  BabySleepSoundsRoute: BabySleepSoundsRoute,
+  BlogRoute: BlogRoute,
+  ContactRoute: ContactRoute,
+  FrequentlyAskedQuestionsRoute: FrequentlyAskedQuestionsRoute,
+  GolfSoundsRoute: GolfSoundsRoute,
+  HealingSoundsRoute: HealingSoundsRoute,
+  NatureSoundsRoute: NatureSoundsRoute,
+  RandomSoundsRoute: RandomSoundsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
