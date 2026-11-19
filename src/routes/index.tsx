@@ -1232,7 +1232,7 @@ function useImportedEntranceAnimations() {
   useEffect(() => {
     const targets = Array.from(document.querySelectorAll<HTMLElement>("[data-entrance-animation]"));
     const reveal = (element: HTMLElement) => {
-      const animation = element.dataset.entranceAnimation;
+      const animation = element.dataset["entranceAnimation"];
       element.classList.remove("elementor-invisible");
       element.classList.add("animated");
       if (animation) element.classList.add(animation);
@@ -1249,7 +1249,7 @@ function useImportedEntranceAnimations() {
         if (!entry.isIntersecting || !(entry.target instanceof HTMLElement)) continue;
         const element = entry.target;
         observer.unobserve(element);
-        const requestedDelay = Number(element.dataset.entranceDelay);
+        const requestedDelay = Number(element.dataset["entranceDelay"]);
         const delay = Number.isFinite(requestedDelay) && requestedDelay > 0 ? requestedDelay : 0;
         if (delay === 0) {
           reveal(element);
