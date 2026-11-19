@@ -7449,6 +7449,7 @@ body.rtl .e-con { --padding-inline-start: var(--padding-right); --padding-inline
 .elementor-shape-circle .elementor-icon { border-radius: 50%; }
 .e-transform .elementor-widget-container, .e-transform:not(:has(.elementor-widget-container)) { transform: perspective(var(--e-transform-perspective,0)) rotate(var(--e-transform-rotateZ,0)) rotateX(var(--e-transform-rotateX,0)) rotateY(var(--e-transform-rotateY,0)) translate(var(--e-transform-translate,0)) translateX(var(--e-transform-translateX,0)) translateY(var(--e-transform-translateY,0)) scaleX(calc(var(--e-transform-flipX, 1) * var(--e-transform-scaleX, var(--e-transform-scale, 1)))) scaleY(calc(var(--e-transform-flipY, 1) * var(--e-transform-scaleY, var(--e-transform-scale, 1)))) skewX(var(--e-transform-skewX,0)) skewY(var(--e-transform-skewY,0)); transform-origin: var(--e-transform-origin-y) var(--e-transform-origin-x); }
 
+.elementor-invisible { visibility: hidden; }
 .animated { animation-duration: 1.25s; }
 
 
