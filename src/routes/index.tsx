@@ -26,6 +26,7 @@ function Index() {
   const [heroSlide, setHeroSlide] = useState(0);
   const menuToggleRef = useRef<HTMLAnchorElement>(null);
   useImportedLayout();
+  useImportedEntranceAnimations();
   useEffect(() => {
     if (!isMenuOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -86,7 +87,7 @@ function Index() {
                   </div>
                 </div>
               </section>
-              <section className={"elementor-section elementor-top-section elementor-element elementor-element-1179040 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right animated fadeInUp"} id="features">
+              <section className={"elementor-section elementor-top-section elementor-element elementor-element-1179040 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right elementor-invisible"} data-entrance-animation="fadeInUp" id="features">
                 <div className={"elementor-container elementor-column-gap-default"}>
                   <div className={"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-dfb3085"} data-element_type="column">
                     <div className={"elementor-widget-wrap elementor-element-populated"}>
@@ -448,7 +449,7 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
   return (
     <section className={"elementor-section elementor-top-section elementor-element elementor-element-ed96999 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right"}>
       <div className={"elementor-container elementor-column-gap-default"}>
-        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-57c4c94 animated fadeInLeft"} data-element_type="column">
+        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-57c4c94 elementor-invisible"} data-element_type="column" data-entrance-animation="fadeInLeft">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
             <div className={"elementor-element elementor-element-0ed4037 elementor-widget elementor-widget-heading"}>
               <h1 className={"elementor-heading-title elementor-size-default"}>Golf Sleep Sounds App for Better Sleep &amp; Relaxation
@@ -498,7 +499,7 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
             </section>
           </div>
         </div>
-        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f8afb86 animated fadeInRight"} data-element_type="column">
+        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-f8afb86 elementor-invisible"} data-element_type="column" data-entrance-animation="fadeInRight">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
             <div className={"elementor-element elementor-element-5297d20 elementor-widget elementor-widget-apper_mobile_slider"}>
               <div className={"elementor-widget-container"}>
@@ -538,7 +539,7 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
 
 function ImportedSection() {
   return (
-    <section className={"elementor-section elementor-top-section elementor-element elementor-element-527e08b acm_section_90 elementor-section-boxed elementor-section-height-default elementor-section-height-default right animated fadeInUp"}>
+    <section className={"elementor-section elementor-top-section elementor-element elementor-element-527e08b acm_section_90 elementor-section-boxed elementor-section-height-default elementor-section-height-default right elementor-invisible"} data-entrance-animation="fadeInUp">
       <div className={"elementor-container elementor-column-gap-default"}>
         <div className={"elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8eab721"} data-element_type="column">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
@@ -710,7 +711,7 @@ function ImportedSectionYourBedtimeYourWay() {
   return (
     <section className={"elementor-section elementor-top-section elementor-element elementor-element-08f14c1 elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right"} id="about">
       <div className={"elementor-container elementor-column-gap-default"}>
-        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-765a841 animated fadeInLeft"} data-element_type="column">
+        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-765a841 elementor-invisible"} data-element_type="column" data-entrance-animation="fadeInLeft">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
             <div className={"elementor-element elementor-element-cfc0354 elementor-widget elementor-widget-apper_img_anim"}>
               <div className={"elementor-widget-container"}>
@@ -729,7 +730,7 @@ function ImportedSectionYourBedtimeYourWay() {
             </div>
           </div>
         </div>
-        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-063c55b animated fadeInRight"} data-element_type="column">
+        <div className={"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-063c55b elementor-invisible"} data-element_type="column" data-entrance-animation="fadeInRight">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
             <div className={"elementor-element elementor-element-7ddadd8 elementor-widget elementor-widget-apper_heading"}>
               <div className={"elementor-widget-container"}>
@@ -798,7 +799,7 @@ function ImportedSectionYourBedtimeYourWay() {
 
 function ImportedSection299() {
   return (
-    <section className={"elementor-section elementor-top-section elementor-element elementor-element-8fffd9d elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right animated fadeInUp"}>
+    <section className={"elementor-section elementor-top-section elementor-element elementor-element-8fffd9d elementor-section-boxed elementor-section-height-default elementor-section-height-default acm_section_full right elementor-invisible"} data-entrance-animation="fadeInUp" data-entrance-delay="500">
       <div className={"elementor-container elementor-column-gap-default"}>
         <div className={"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1905433"} data-element_type="column">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
@@ -1078,7 +1079,7 @@ function ImportedSectionSleepBetterStartsWith() {
       <div className={"elementor-container elementor-column-gap-default"}>
         <div className={"elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-20689c6"} data-element_type="column">
           <div className={"elementor-widget-wrap elementor-element-populated"}>
-            <section className={"elementor-section elementor-inner-section elementor-element elementor-element-15a2021 elementor-section-boxed elementor-section-height-default acm_section_full right animated fadeIn"}>
+            <section className={"elementor-section elementor-inner-section elementor-element elementor-element-15a2021 elementor-section-boxed elementor-section-height-default acm_section_full right elementor-invisible"} data-entrance-animation="fadeIn">
               <div className={"elementor-container elementor-column-gap-no"}>
                 <div className={"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-0cb7a78"} data-element_type="column">
                   <div className={"elementor-widget-wrap elementor-element-populated"}>
@@ -1226,6 +1227,49 @@ function ImportedFooter() {
   );
 }
 
+
+function useImportedEntranceAnimations() {
+  useEffect(() => {
+    const targets = Array.from(document.querySelectorAll<HTMLElement>("[data-entrance-animation]"));
+    const reveal = (element: HTMLElement) => {
+      const animation = element.dataset.entranceAnimation;
+      element.classList.remove("elementor-invisible");
+      element.classList.add("animated");
+      if (animation) element.classList.add(animation);
+    };
+
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      targets.forEach(reveal);
+      return;
+    }
+
+    const pendingTimers = new Set<number>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting || !(entry.target instanceof HTMLElement)) continue;
+        const element = entry.target;
+        observer.unobserve(element);
+        const requestedDelay = Number(element.dataset.entranceDelay);
+        const delay = Number.isFinite(requestedDelay) && requestedDelay > 0 ? requestedDelay : 0;
+        if (delay === 0) {
+          reveal(element);
+          continue;
+        }
+        const timer = window.setTimeout(() => {
+          pendingTimers.delete(timer);
+          reveal(element);
+        }, delay);
+        pendingTimers.add(timer);
+      }
+    }, { root: null, rootMargin: "0px", threshold: 0 });
+
+    targets.forEach((target) => observer.observe(target));
+    return () => {
+      observer.disconnect();
+      pendingTimers.forEach((timer) => window.clearTimeout(timer));
+    };
+  }, []);
+}
 
 function useImportedLayout() {
   useEffect(() => {
