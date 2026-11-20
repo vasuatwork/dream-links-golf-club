@@ -24,9 +24,34 @@ function Index() {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSoundsMenuOpen, setSoundsMenuOpen] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
+  const [screenSlide, setScreenSlide] = useState(0);
+  const [featureSlide, setFeatureSlide] = useState(0);
   const menuToggleRef = useRef<HTMLAnchorElement>(null);
   useImportedLayout();
   useImportedEntranceAnimations();
+  useEffect(() => {
+    const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+    if (prefersReducedMotion.matches) return;
+    const timer = window.setInterval(() => {
+      setHeroSlide((slide) => (slide + 1) % 3);
+      setScreenSlide((slide) => (slide + 1) % 5);
+      setFeatureSlide((slide) => (slide + 1) % 4);
+    }, 4000);
+    return () => window.clearInterval(timer);
+  }, []);
+  useEffect(() => {
+    const stage = document.querySelector<HTMLElement>(".acm_screen-slider .owl-stage");
+    if (!stage) return;
+    const centerIndex = 5 + screenSlide;
+    Array.from(stage.querySelectorAll<HTMLElement>(".owl-item")).forEach((item, index) => {
+      item.classList.toggle("center", index === centerIndex);
+      item.classList.toggle("active", Math.abs(index - centerIndex) <= 2);
+    });
+    document.querySelectorAll<HTMLElement>(".acm_screen-slider .owl-dot").forEach((dot, index) => {
+      dot.classList.toggle("active", index === screenSlide);
+      dot.setAttribute("aria-pressed", String(index === screenSlide));
+    });
+  }, [screenSlide]);
   useEffect(() => {
     if (!isMenuOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -132,7 +157,7 @@ function Index() {
                           <div className={"acm_screen-slider-wrap clr"}>
                             <div className={"owl-carousel acm_screen-slider owl-theme owl-loaded owl-drag"}>
                               <div className={"owl-stage-outer"}>
-                                <div className={"owl-stage"} style={{ transition: "2.5s", width: "3810px", transform: "translate3d(-762px, 0px, 0px)" }} data-site-import-responsive="387">
+                                <div className={"owl-stage"} style={{ transition: "1s", width: "3810px", transform: `translate3d(-${762 + screenSlide * 254}px, 0px, 0px)` }} data-site-import-responsive="387">
                                   <div className={"owl-item cloned"} style={{ width: "244px", marginRight: "10px" }}>
                                     <div className={"item"}>
                                       <div className={"screen_frame_img"}>
@@ -249,19 +274,19 @@ function Index() {
                                 </button>
                               </div>
                               <div className={isMobile ? "owl-dots" : "owl-dots disabled"}>
-                                <button role="button" className={"owl-dot active"}>
+                                <button type="button" aria-label="Show app screenshot slide 1" aria-pressed={screenSlide === 0} role="button" className={`owl-dot${screenSlide === 0 ? " active" : ""}`} onClick={() => setScreenSlide(0)}>
                                   <span />
                                 </button>
-                                <button role="button" className={"owl-dot"}>
+                                <button type="button" aria-label="Show app screenshot slide 2" aria-pressed={screenSlide === 1} role="button" className={`owl-dot${screenSlide === 1 ? " active" : ""}`} onClick={() => setScreenSlide(1)}>
                                   <span />
                                 </button>
-                                <button role="button" className={"owl-dot"}>
+                                <button type="button" aria-label="Show app screenshot slide 3" aria-pressed={screenSlide === 2} role="button" className={`owl-dot${screenSlide === 2 ? " active" : ""}`} onClick={() => setScreenSlide(2)}>
                                   <span />
                                 </button>
-                                <button role="button" className={"owl-dot"}>
+                                <button type="button" aria-label="Show app screenshot slide 4" aria-pressed={screenSlide === 3} role="button" className={`owl-dot${screenSlide === 3 ? " active" : ""}`} onClick={() => setScreenSlide(3)}>
                                   <span />
                                 </button>
-                                <button role="button" className={"owl-dot"}>
+                                <button type="button" aria-label="Show app screenshot slide 5" aria-pressed={screenSlide === 4} role="button" className={`owl-dot${screenSlide === 4 ? " active" : ""}`} onClick={() => setScreenSlide(4)}>
                                   <span />
                                 </button>
                               </div>
