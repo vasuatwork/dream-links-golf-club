@@ -40,6 +40,19 @@ function Index() {
     return () => window.clearInterval(timer);
   }, []);
   useEffect(() => {
+    const stage = document.querySelector<HTMLElement>(".acm_screen-slider .owl-stage");
+    if (!stage) return;
+    const centerIndex = 5 + screenSlide;
+    Array.from(stage.querySelectorAll<HTMLElement>(".owl-item")).forEach((item, index) => {
+      item.classList.toggle("center", index === centerIndex);
+      item.classList.toggle("active", Math.abs(index - centerIndex) <= 2);
+    });
+    document.querySelectorAll<HTMLElement>(".acm_screen-slider .owl-dot").forEach((dot, index) => {
+      dot.classList.toggle("active", index === screenSlide);
+      dot.setAttribute("aria-pressed", String(index === screenSlide));
+    });
+  }, [screenSlide]);
+  useEffect(() => {
     if (!isMenuOpen) return;
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
