@@ -1,4 +1,4 @@
-import type { CSSProperties, RefObject } from "react";
+import type { CSSProperties, Dispatch, RefObject, SetStateAction } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -25,6 +25,7 @@ const featureScreens = [
   { src: "/site-assets/a96b4a6d9373720c.png", alt: "Categories V1" },
   { src: "/site-assets/71ae8bb576b34bfc.png", alt: "Music Player V4 (2)" },
 ] as const;
+const featureSlideOrder = [3, 0, 1, 2, 3, 0] as const;
 
 function Index() {
   const isMobile = useSyncExternalStore(subscribeMobile, () => matchMedia("(max-width: 767px)").matches, () => false);
@@ -152,7 +153,12 @@ function Index() {
                   </div>
                 </div>
               </section>
-              <ImportedSection />
+              <ImportedSection
+                featurePosition={featurePosition}
+                featureTransition={featureTransition}
+                setFeaturePosition={setFeaturePosition}
+                setFeatureTransition={setFeatureTransition}
+              />
               <ImportedSectionYourBedtimeYourWay />
               <ImportedSection299 />
               <ImportedSectionBeautifulByDesignPeaceful />
@@ -570,7 +576,12 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
   );
 }
 
-function ImportedSection() {
+function ImportedSection({ featurePosition, featureTransition, setFeaturePosition, setFeatureTransition }: {
+  featurePosition: number;
+  featureTransition: boolean;
+  setFeaturePosition: Dispatch<SetStateAction<number>>;
+  setFeatureTransition: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
     <section className={"elementor-section elementor-top-section elementor-element elementor-element-527e08b acm_section_90 elementor-section-boxed elementor-section-height-default elementor-section-height-default right elementor-invisible"} data-entrance-animation="fadeInUp">
       <div className={"elementor-container elementor-column-gap-default"}>
@@ -658,7 +669,7 @@ function ImportedSection() {
                   }}
                   data-site-import-responsive="203"
                 >
-                  {[3, 0, 1, 2, 3, 0].map((imageIndex, itemIndex) => {
+                  {featureSlideOrder.map((imageIndex, itemIndex) => {
                     const screen = featureScreens[imageIndex];
                     const isCurrent = itemIndex === featurePosition;
                     const classes = [
