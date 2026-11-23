@@ -1,4 +1,4 @@
-import type { CSSProperties, RefObject } from "react";
+import type { CSSProperties, Dispatch, RefObject, SetStateAction } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useSyncExternalStore } from "react";
 import { createFileRoute } from "@tanstack/react-router";
@@ -19,13 +19,22 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const featureScreens = [
+  { src: "/site-assets/92aed64c58a2e162.png", alt: "Get Started" },
+  { src: "/site-assets/937b5db52b0d7038.png", alt: "Music Player V4" },
+  { src: "/site-assets/a96b4a6d9373720c.png", alt: "Categories V1" },
+  { src: "/site-assets/71ae8bb576b34bfc.png", alt: "Music Player V4 (2)" },
+] as const;
+const featureSlideOrder = [3, 0, 1, 2, 3, 0] as const;
+
 function Index() {
   const isMobile = useSyncExternalStore(subscribeMobile, () => matchMedia("(max-width: 767px)").matches, () => false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isSoundsMenuOpen, setSoundsMenuOpen] = useState(false);
   const [heroSlide, setHeroSlide] = useState(0);
   const [screenSlide, setScreenSlide] = useState(0);
-  const [featureSlide, setFeatureSlide] = useState(0);
+  const [featurePosition, setFeaturePosition] = useState(1);
+  const [featureTransition, setFeatureTransition] = useState(true);
   const menuToggleRef = useRef<HTMLAnchorElement>(null);
   useImportedLayout();
   useImportedEntranceAnimations();
@@ -35,7 +44,7 @@ function Index() {
     const timer = window.setInterval(() => {
       setHeroSlide((slide) => (slide + 1) % 3);
       setScreenSlide((slide) => (slide + 1) % 5);
-      setFeatureSlide((slide) => (slide + 1) % 4);
+      setFeaturePosition((position) => (position === 4 ? 5 : position >= 5 ? 2 : position + 1));
     }, 4000);
     return () => window.clearInterval(timer);
   }, []);
@@ -144,7 +153,12 @@ function Index() {
                   </div>
                 </div>
               </section>
-              <ImportedSection />
+              <ImportedSection
+                featurePosition={featurePosition}
+                featureTransition={featureTransition}
+                setFeaturePosition={setFeaturePosition}
+                setFeatureTransition={setFeatureTransition}
+              />
               <ImportedSectionYourBedtimeYourWay />
               <ImportedSection299 />
               <ImportedSectionBeautifulByDesignPeaceful />
@@ -562,7 +576,12 @@ function ImportedSectionGolfSleepSoundsApp({ isMobile, heroSlide, onHeroSlideCha
   );
 }
 
-function ImportedSection() {
+function ImportedSection({ featurePosition, featureTransition, setFeaturePosition, setFeatureTransition }: {
+  featurePosition: number;
+  featureTransition: boolean;
+  setFeaturePosition: Dispatch<SetStateAction<number>>;
+  setFeatureTransition: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
     <section className={"elementor-section elementor-top-section elementor-element elementor-element-527e08b acm_section_90 elementor-section-boxed elementor-section-height-default elementor-section-height-default right elementor-invisible"} data-entrance-animation="fadeInUp">
       <div className={"elementor-container elementor-column-gap-default"}>
@@ -635,37 +654,40 @@ function ImportedSection() {
           <div className={"elementor-widget-wrap elementor-element-populated e-swiper-container"}>
             <div className={"elementor-element elementor-element-2228c43 elementor-widget elementor-widget-image-carousel e-widget-swiper"}>
               <div className={"elementor-image-carousel-wrapper swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden"} role="region" aria-roledescription="carousel" aria-label="Image Carousel" dir="ltr">
-                <div className={"elementor-image-carousel swiper-wrapper"} aria-live="off" id="swiper-wrapper-ef10493bf0d4502b7" style={{ transform: "translate3d(-407px, 0px, 0px)", transitionDuration: "0ms" }} data-site-import-responsive="203">
-                  <div className={"swiper-slide swiper-slide-duplicate swiper-slide-prev"} role="group" aria-roledescription="slide" aria-label="4 / 4" aria-hidden="true" inert style={{ width: "407px" }} data-site-import-responsive="204">
-                    <figure className={"swiper-slide-inner"}>
-                      <img decoding="async" className={"swiper-slide-image"} src="/site-assets/71ae8bb576b34bfc.png" alt="Music Player V4 (2)" />
-                    </figure>
-                  </div>
-                  <div className={"swiper-slide swiper-slide-active"} role="group" aria-roledescription="slide" aria-label="1 / 4" style={{ width: "407px" }} data-site-import-responsive="207">
-                    <figure className={"swiper-slide-inner"}>
-                      <img decoding="async" className={"swiper-slide-image"} src="/site-assets/92aed64c58a2e162.png" alt="Get Started" />
-                    </figure>
-                  </div>
-                  <div className={"swiper-slide swiper-slide-next"} role="group" aria-roledescription="slide" aria-label="2 / 4" style={{ width: "407px" }} aria-hidden="true" inert data-site-import-responsive="210">
-                    <figure className={"swiper-slide-inner"}>
-                      <img decoding="async" className={"swiper-slide-image"} src="/site-assets/937b5db52b0d7038.png" alt="Music Player V4" />
-                    </figure>
-                  </div>
-                  <div className={"swiper-slide"} role="group" aria-roledescription="slide" aria-label="3 / 4" style={{ width: "407px" }} aria-hidden="true" inert data-site-import-responsive="213">
-                    <figure className={"swiper-slide-inner"}>
-                      <img decoding="async" className={"swiper-slide-image"} src="/site-assets/a96b4a6d9373720c.png" alt="Categories V1" />
-                    </figure>
-                  </div>
-                  <div className={"swiper-slide swiper-slide-duplicate-prev"} role="group" aria-roledescription="slide" aria-label="4 / 4" style={{ width: "407px" }} aria-hidden="true" inert data-site-import-responsive="216">
-                    <figure className={"swiper-slide-inner"}>
-                      <img decoding="async" className={"swiper-slide-image"} src="/site-assets/71ae8bb576b34bfc.png" alt="Music Player V4 (2)" />
-                    </figure>
-                  </div>
-                  <div className={"swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"} role="group" aria-roledescription="slide" aria-label="1 / 4" style={{ width: "407px" }} aria-hidden="true" inert data-site-import-responsive="219">
-                    <figure className={"swiper-slide-inner"}>
-                      <img decoding="async" className={"swiper-slide-image"} src="/site-assets/92aed64c58a2e162.png" alt="Get Started" />
-                    </figure>
-                  </div>
+                <div
+                  className={"elementor-image-carousel swiper-wrapper"}
+                  aria-live="off"
+                  id="swiper-wrapper-ef10493bf0d4502b7"
+                  style={{ transform: `translate3d(-${featurePosition * 407}px, 0px, 0px)`, transitionDuration: featureTransition ? "600ms" : "0ms" }}
+                  onTransitionEnd={(event) => {
+                    if (event.target !== event.currentTarget || featurePosition !== 5) return;
+                    setFeatureTransition(false);
+                    setFeaturePosition(1);
+                    window.requestAnimationFrame(() => {
+                      window.requestAnimationFrame(() => setFeatureTransition(true));
+                    });
+                  }}
+                  data-site-import-responsive="203"
+                >
+                  {featureSlideOrder.map((imageIndex, itemIndex) => {
+                    const screen = featureScreens[imageIndex];
+                    const isCurrent = itemIndex === featurePosition;
+                    const classes = [
+                      "swiper-slide",
+                      (itemIndex === 0 || itemIndex === 5) && "swiper-slide-duplicate",
+                      isCurrent && "swiper-slide-active",
+                      itemIndex === featurePosition - 1 && "swiper-slide-prev",
+                      itemIndex === featurePosition + 1 && "swiper-slide-next",
+                    ].filter(Boolean).join(" ");
+
+                    return (
+                      <div key={`${screen.src}-${itemIndex}`} className={classes} role="group" aria-roledescription="slide" aria-label={`${imageIndex + 1} / 4`} aria-hidden={!isCurrent} inert={!isCurrent} style={{ width: "407px" }}>
+                        <figure className={"swiper-slide-inner"}>
+                          <img decoding="async" className={"swiper-slide-image"} src={screen.src} alt={screen.alt} />
+                        </figure>
+                      </div>
+                    );
+                  })}
                 </div>
                 <span className={"swiper-notification"} aria-live="assertive" aria-atomic="true" />
               </div>
